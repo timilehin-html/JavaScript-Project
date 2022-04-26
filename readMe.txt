@@ -1,0 +1,1 @@
+Some JavaScript projects are just for practice
