@@ -1,0 +1,99 @@
+/* basic styling */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    font-size: 1em;
+    overflow-x: hidden;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.QuestionBox{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.heading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+.heading h1{
+    font-size: 2.5em;
+    color: goldenrod;
+    font-family: 'Oleo Script Swash Caps', cursive;
+}
+.que {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.7em;
+    margin: 0.5em 0;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0px #d6d6d6e6;
+}
+.question{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.question p {
+    font-size: 1.1em;
+    color: #333;
+    letter-spacing: 2px;
+}
+.question .button{
+    font-size: 1em;
+    color: goldenrod;
+    border: 2px solid goldenrod;
+    padding: 0.1em;
+    border-radius: 5px;
+}
+.question .button .fa-minus{
+    display: none;
+}
+.answer{
+    font-size: 1.1em;
+    color: #333333;
+    width: 100%;
+    border-top: 1px solid #c5c4c2;
+    margin: 0.7em 0;
+    padding: 0.5em 0;
+    display: none;
+    letter-spacing: 1px;
+}
+
+.show > .answer {
+    display: block;
+}
+.show > .question .button .fa-plus{
+    display: none;
+}
+.show > .question .button .fa-minus{
+    display: block;
+}
+
+@media screen and (max-width: 620px) {
+    .QuestionBox{
+        width: 95%;
+    }
+}
