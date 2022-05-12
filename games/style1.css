@@ -1,0 +1,218 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+body{
+    font-family: sans-serif;
+    font-size: 1em;
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.col1{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1em;
+    background-color: #dfdfdf;
+    margin: 0.5em;
+    border-radius: 15px;
+}
+.col1 .time{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+.col1 .correctAndWrong{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-weight: bold;
+}
+.col1 .green {
+    font-size: 1.5em;
+    color: #333;
+}
+.correctAndWrong .color1{
+    padding: 0 0.3em;
+    font-size: 0.9em;
+    color: green;
+}
+.col1 .red {
+    font-size: 1.5em;
+    color: #333;
+    padding-left: 0.5em;
+}
+.correctAndWrong .color2{
+    padding: 0 0.3em;
+    font-size: 0.9em;
+    color: red;
+}
+.col2{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5em;
+    background-color: #333;
+    padding: 1em;
+    border-radius: 15px;
+}
+.question{
+    font-size: 1.5em;
+    color: #eee;
+    padding: 0.5em;
+}
+.value1 {
+    font-size: 1.3em;
+    padding: 0.5em;
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid white;
+    margin: 0.3em;
+}
+.error{
+    padding: 0.3em;
+    font-size: 1.1em;
+    color: #e91e63;
+    display: none;
+}
+.error-display{
+    display: block;
+}
+.col2 a{
+    font-size: 1.4em;
+    background-color: green;
+    padding: 0.3em 1em;
+    color: #fff;
+    border-radius: 10px;
+    margin: 0.5em 0;
+    border: 1px solid transparent;
+}
+.col2 a:hover {
+    background-color: transparent;
+    border: 1px solid green;
+}
+.life1 p{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    text-transform: lowercase;
+}
+
+
+/* fail page */
+.fail{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-700px);
+}
+
+.fail-box{
+    width: 600px;
+    background-color: #1d1f1f;
+    border-radius: 15px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fail-image{
+    width: 200px;
+    height: 200px;
+    margin: 0.5em;
+    background-image: url("./images/sad.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: 5px solid #75969e;
+}
+.fail-content{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5em;
+}
+.fail-content h1{
+    font-size: 2em;
+    padding: 0.5em;
+    text-transform: capitalize;
+    color: #75969e;
+}
+.fail-content p{
+    font-size: 1.4em;
+    text-align: center;
+    padding: 0.5em;
+    color: #f0f5f5;
+}
+
+.option{
+    width: 90%;
+    padding: 0.5em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.option .play{
+    font-size: 1.4em;
+    background-color: #f0f5f5;
+    color: #555887;
+    padding: 0.3em 1em;
+    border-radius: 10px;
+    border: 2px solid transparent;
+}
+.option .play:hover{
+    background-color: transparent;
+    color: #f0f5f5;
+    border-color: #f0f5f5;
+}
+
+.option .go{
+    font-size: 1.4em;
+    background-color: transparent;
+    color: #f0f5f5;
+    padding: 0.3em 1em;
+    border-radius: 10px;
+    border: 2px solid #f0f5f5;
+}
+.option .go:hover{
+    background-color: #f0f5f5;
+    color: #555887;
+    border-color: transparent;
+}
