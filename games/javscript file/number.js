@@ -52,18 +52,18 @@ function errorSet(error1) {
 function lifeSet(life) {
   return (document.querySelector(".life").innerHTML = life);
 }
-// question data
+//   question data
 var question = [
-  "1) Guessing between A to D",
-  "2) Guessing between E to H",
-  "3) Guessing between I to L",
-  "4) Guessing between M to P",
-  "5) Guessing between Q to T",
-  "6) Guessing between U to X",
-  "7) Guessing between A to Z",
+  "1) Guessing between 1 to 20",
+  "2) Guessing between 21 to 35",
+  "3) Guessing between 36 to 50",
+  "4) Guessing between 51 to 65",
+  "5) Guessing between 66 to 75",
+  "6) Guessing between 76 to 100",
+  "7) Guessing between 1 to 100",
 ];
 // answer data
-var answer = ["B", "G", "K", "P", "Q", "W", "O"];
+var answer = ["17", "33", "37", "59", "66", "99", "1"];
 
 // global varaible
 var num = 0;
