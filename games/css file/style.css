@@ -1,0 +1,181 @@
+/* basic styling */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+body{
+    font-family: sans-serif;
+    font-size: 1em;
+    overflow-x: hidden;
+}
+/* this add class is not access in html but I will add this class through js */
+body.add{
+    overflow: hidden;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+/* welcome page design */
+/* ******************** */
+.container1{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0 0 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+#heading{
+    color: #b7b9eb;
+    text-shadow: -3px 1px 1px #767cfe;
+    font-size: 10em;
+    font-family: sans-serif;
+    text-transform: capitalize;
+}
+/* ************************** */
+/* container design one heading and some cards */
+/* ******************************************* */
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+}
+.heading{
+    font-size: 3em;
+    color: #262424;
+    background-color: #e2e2e2;
+    border-radius: 10px;
+    padding: 0.2em;
+    margin-top: 1em;
+}
+.cards{
+    margin: 2em 0;
+}
+/* card 1, card 2 and card 3 styling */
+/* ********************************* */
+.card1, .card2, .card3{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c2c34;
+    border-radius: 15px;
+    padding: 0.5em;
+    margin: 1em 0;
+}
+.card1 .col1, .card2 .col1, .card3 .col1{
+    width: 300px;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    border: 5px solid #eee;
+}
+.card1 .col1{
+    background-image: url("../images/character3.jpg");
+}
+.card2 .col1{
+    background-image: url("../images/number2.jpg");
+}
+.card3 .col1{
+    background-image: url("../images/question1.jpg");
+}
+.col2{
+    width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 1em;
+}
+.col2 h1{
+    font-size: 2em;
+    color: #f2f2f2;
+    padding: 0.5em 0;
+}
+.col2 p{
+    font-size: 1.2em;
+    padding: 0.5em 0;
+    color: #d5d8db;
+}
+.col2 a{
+    padding: 0.5em 1em;
+    font-size: 1.2em;
+    background-color: #141515;
+    border-radius: 10px;
+    color: #fff;
+    margin: 0.5em 0;
+    transition: 0.5s;
+    border: 2px solid transparent;
+}
+.col2 a:hover{
+    border: 2px solid #fff;
+    background-color: transparent;
+}
+/* ********************** */
+/* footer part */
+footer{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2c2c34;
+    border-top: 7px solid #484b54;
+}
+footer p {
+    font-size: 1.3em;
+    color: #eee;
+    text-transform: capitalize;
+    padding: 0.5em 0;
+}
+
+/* responsive part */
+/* *************** */
+@media screen and (max-width: 760px) {
+    .cards{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .card1, .card2, .card3{
+        width: 95%;
+        flex-direction: column;
+    }
+    .card1 .col1, .card2 .col1, .card3 .col1{
+        width: 95%;
+        margin: 0.7em 0;
+    }
+    .col2{
+        width: 350px;
+    }
+    .col2 h1{
+        font-size: 1.7em;
+    }
+    .col2 p {
+        font-size: 1em;
+    }
+    .col2 a{
+        font-size: 1em;
+    }
+    .heading{
+        font-size: 2.5em;
+    }
+    #heading{
+        font-size: 3.5em;
+    }
+}
