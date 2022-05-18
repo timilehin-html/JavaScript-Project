@@ -1,0 +1,242 @@
+/* basic styling */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+body{
+    overflow-x: hidden;
+    font-family: sans-serif;
+    font-size: 1em;
+    background-color: #5352ed;
+}
+.row{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.row .col1{
+    width: 100%;
+    height: 40%;
+    background-image: url("./images/Sample\ 10.png");
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.col1 .heading{
+    position: absolute;
+    bottom: 1.5em;
+    left: 2em;
+    color: #fff;
+    font-size: 1.3em;
+}
+.col1 .hamburgerIcon{
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    color: #fff;
+    font-size: 1.7em;
+    cursor: pointer;
+    transform: scale(1.5);
+}
+.col1 .hamburgerIcon:hover{
+    transform: scale(1);
+}
+
+.row .col2{
+    width: 100%;
+    height: 60%;
+    background-color: #fff;
+    border-top-left-radius: 1.5em;
+    border-top-right-radius: 1.5em;
+    position: relative;
+    padding: 1em;
+}
+.col2 .addIcon{
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    background-color: #5352ed;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.col2 .addIcon:hover{
+    transform: rotate(360deg);
+    box-shadow: 0 0 5px 0 #862f62;
+}
+
+/* table work start */
+table{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+tr{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+td{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0.5em 0;
+}
+input[type = "text"] {
+    width: 80%;
+    height: 30px;
+    padding: 1em;
+    font-size: 1.3em;
+    border: none;
+    outline: none;
+    background-color: #eee;
+    border-radius: 10px;
+    color: #333;
+}
+input[type = "checkbox"] {
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: #eee;
+}
+/* this class add through javascript */
+.deleteButton{
+    width: 70px;
+    height: 40px;
+    font-size: 1.1em;
+    border: none;
+    outline: none;
+    background-color: #ff7171;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+.updateButton{
+    width: 70px;
+    height: 40px;
+    font-size: 1.1em;
+    border: none;
+    outline: none;
+    background-color: #71ff93;
+    border-radius: 10px;
+    color: #013001;
+    cursor: pointer;
+}
+
+
+/* side navbar */
+.sideBar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: rgb(36 46 86);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 1.5em;
+    border-right: 5px solid #5f6fdb;
+    transform: translateX(-400px);
+}
+
+.sideBar .hamburger{
+    width: 100%;
+    padding: 0.5em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #ccc;
+    font-size: 1.5em;
+}
+.hamburger .fa-angle-left{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid #13269b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.hamburger .fa-angle-left:hover{
+    box-shadow: 0 0 2px 0px #0f27c9ed;
+}
+
+.sideBar .userImage{
+    width: 150px;
+    height: 150px;
+    background-image: url("./images/userImage.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    padding: 1em;
+    box-shadow: 0 0 2px 1px #0f27c9;
+}
+
+.sideBar .userName{
+    width: 100%;
+    padding: 1em 0;
+    font-size: 1em;
+    color: #eee;
+    margin: 1em 0;
+}
+
+.list{
+    list-style: none;
+    width: 100%;
+    color: #fff;
+}
+
+.list li{
+    width: 100%;
+    padding: 0.5em 0;
+    margin: 0.3em 0;
+    cursor: pointer;
+}
+.list li:hover{
+    background-color: #5d6bd4;
+    padding: 0.5em;
+    border-radius: 10px;
+}
+.list li .fa-bars-progress, .fa-eject{
+    padding-right: 0.5em;
+    color: #eeeeeeb0;
+}
+
+@media screen and (max-width: 600px) {
+    .col1 .hamburgerIcon{
+        transform: scale(1.2);
+    }
+    .col1 .heading{
+        font-size: 1.2em;
+        text-align: center;
+        width: 100%;
+        left: 0;
+    }
+    input[type = "text"]{
+        width: 45%;
+    }
+}
