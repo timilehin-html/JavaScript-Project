@@ -5,11 +5,13 @@
     box-sizing: border-box;
     transition: 0.5s;
 }
+html{
+    overflow: hidden;
+}
 body{
-    overflow-x: hidden;
     font-family: sans-serif;
     font-size: 1em;
-    background-color: #5352ed;
+    background-color: #8ec7ff; /*#5352ed*/
 }
 .row{
     width: 100%;
@@ -22,9 +24,9 @@ body{
 .row .col1{
     width: 100%;
     height: 40%;
-    background-image: url("./images/Sample\ 10.png");
-    background-size: cover;
-    background-position: bottom;
+    background-image: url("./images/img2.png");/*./images/Sample\ 10.png*/
+    background-size: cover; 
+    background-position: center center; /*bottom*/
     background-repeat: no-repeat;
     position: relative;
 }
@@ -51,11 +53,16 @@ body{
 .row .col2{
     width: 100%;
     height: 60%;
-    background-color: #fff;
+    background-color: #fff; /*#161929*/
     border-top-left-radius: 1.5em;
     border-top-right-radius: 1.5em;
     position: relative;
     padding: 1em;
+}
+.row .col2 .tableContainer{
+    display: none;
+    height: 100%;
+    overflow: auto;
 }
 .col2 .addIcon{
     position: absolute;
@@ -71,9 +78,10 @@ body{
     color: #fff;
     font-size: 1.5em;
     cursor: pointer;
+    transform: translateX(200px);
 }
 .col2 .addIcon:hover{
-    transform: rotate(360deg);
+    transform: translateX(0px) rotate(360deg) !important;
     box-shadow: 0 0 5px 0 #862f62;
 }
 
@@ -151,7 +159,7 @@ input[type = "checkbox"] {
     left: 0;
     width: 300px;
     height: 100vh;
-    background-color: rgb(36 46 86);
+    background-color: rgb(255 255 255); /*rgb(36 46 86)*/
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -174,7 +182,7 @@ input[type = "checkbox"] {
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    border: 1px solid #13269b;
+    border: 1px solid #ccc; /*#13269b*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -200,14 +208,14 @@ input[type = "checkbox"] {
     width: 100%;
     padding: 1em 0;
     font-size: 1em;
-    color: #eee;
+    color: #4f5d9d;/*#eee*/
     margin: 1em 0;
 }
 
 .list{
     list-style: none;
     width: 100%;
-    color: #fff;
+    color: #6985bf;/*#fff*/
 }
 
 .list li{
@@ -220,10 +228,113 @@ input[type = "checkbox"] {
     background-color: #5d6bd4;
     padding: 0.5em;
     border-radius: 10px;
+    color: #fff;
+}
+.list li:hover > .fa-bars-progress{
+    color: #eeeeeeb0;
+}
+.list li:hover > .fa-eject{
+    color: #eeeeeeb0;
 }
 .list li .fa-bars-progress, .fa-eject{
     padding-right: 0.5em;
-    color: #eeeeeeb0;
+    color: #6985bf; /*#eeeeeeb0*/
+}
+
+/* text div work */
+.text{
+    padding: 1.5em;
+    width: 98%;
+    height: 100%;
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 1em 0;
+}
+.text .instruction{
+    /* padding: 0.5em 0; */
+    color: #333;/*#fff*/
+}
+.text .longText{
+    padding: 0.5em 0;
+    font-size: 1.3em;
+    color: #333;/*#ccc*/
+}
+.text .thanksMessage{
+    font-size: 1.3em;
+    color: #333;
+    padding: 0.5em 0;
+}
+.text .followMe{
+    padding: 0.5em 0;
+}
+.text .followMe h3{
+    color: #333;
+    padding: 0.5em 0;
+}
+.text .followMe ul{
+    list-style: none;
+}
+.text .followMe ul li{
+    padding: 0.3em 0;
+}
+.text .followMe ul li a{
+    text-decoration: none;
+    color: #43a1fc;
+    font-size: 1.1em;
+}
+.text .portfolio{
+    padding: 0.5em 0;
+}
+.text .portfolio h3{
+    color: #333;
+    padding: 0.3em 0;
+}
+.text .portfolio p a{
+    font-size: 1.1em;
+    color: #43a1fc;
+}
+.text .copyrightMessage{
+    padding: 0.5em 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+
+.themes{
+    position: absolute;
+    bottom: 1em;
+}
+.themes .dark{
+    width: 80px;
+    height: 40px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid #2196f3;
+    background-color: #020a31;
+    color: #fff;
+    cursor: pointer;
+}
+.themes .dark:hover{
+    background-color: transparent;
+    color: #020a31;
+}
+.themes .light{
+    width: 80px;
+    height: 40px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid #2196f3;
+    background-color: transparent;
+    color: #020a31; /*#fff*/
+    cursor: pointer;
+}
+.themes .light:hover{
+    background-color: #020a31;
+    color: #fff;
 }
 
 @media screen and (max-width: 600px) {
@@ -238,5 +349,20 @@ input[type = "checkbox"] {
     }
     input[type = "text"]{
         width: 45%;
+    }
+    .text{
+        padding: 1em;
+    }
+    .text .instruction{
+        font-size: 1.7em;
+    }
+    .text .longText{
+        font-size: 1.1em;
+    }
+    .text .thanksMessage{
+        font-size: 1.1em;
+    }
+    .text .copyrightMessage{
+        font-size: 1.1em;
     }
 }
