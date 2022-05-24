@@ -1,91 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript || Todo App Practice</title>
     <!-- css external file link -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <!-- link font awesome -->
-    <script src="https://kit.fontawesome.com/87550c64f0.js" crossorigin="anonymous"></script>
-</head>
-<body>
-
+    <script
+      src="https://kit.fontawesome.com/87550c64f0.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
     <div class="row">
-        <div class="col1">
-            <div class="heading">
-                <h1>About us</h1> <!--change it text-->
-            </div>
-            <div class="hamburgerIcon">
-                <i class="fa-solid fa-bars"></i>
-            </div>
+      <div class="col1">
+        <div class="heading">
+          <h1>About us</h1>
+          <!--change it text-->
         </div>
-        <div class="col2">
-            <div class="text">
-                <h1 class="instruction">Instruction</h1>
-                <p class="longText">This todo app is simple to use and manage your list items
-                    when you link left side top hamburger bar you will show side
-                    navbar where you give two option second about us which is 
-                    default and first which is tasks opation when you click then you 
-                    click closing arrow which is display on the top right
-                    side in side navbar then you will see the simple interface
-                    right side on the bottom you see plus icon when you click
-                    it you have list create then you enter you content and after 
-                    press enter key it convert normal text mood left side you have
-                    a check box when your task is completed you click it and when you 
-                    delete your create list simple click delete button and when you
-                    update your current content so simple click on the update button.
-                </p>
-                <p class="thanksMessage">Thanks for rading this content 😊</p>
-                <div class="followMe">
-                    <h3>Follow Me</h3>
-                    <ul>
-                        <li><a href="https://www.facebook.com/ShaykhMirzaban" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
-                        <li><a href="https://github.com/shaykhmirzaban" target="_blank"><i class="fa-brands fa-github"></i> Github</a></li>
-                    </ul>
-                </div>
-                <div class="portfolio">
-                    <h3>Check my portfolio</h3>
-                    <p><a href="https://shaykh-mirzaban-portfolio.web.app/" target="_blank">shaykh-mirzaban-portfolio.web.app</a></p>
-                </div>
-                <p class="copyrightMessage">© Copyright 2022 Shaykh Mirzaban</p>
-            </div>
-            <!-- table insert item -->
-            <div class="tableContainer">
-                <table class="table"></table>
-            </div>
-            <!-- add items icon -->
-            <div class="addIcon">
-                <i class="fa-solid fa-plus"></i>
-            </div>
+        <div class="hamburgerIcon">
+          <i class="fa-solid fa-bars"></i>
         </div>
+      </div>
+      <div class="col2">
+        <div class="text">
+          <h1 class="instruction">Instruction</h1>
+          <p class="longText">
+            This todo app is simple to use and manage your list items when you
+            link left side top hamburger bar you will show side navbar where you
+            give two option second about us which is default and first which is
+            tasks opation when you click then you click closing arrow which is
+            display on the top right side in side navbar then you will see the
+            simple interface right side on the bottom you see plus icon when you
+            click it you have list create then you enter you content and after
+            press enter key it convert normal text mood left side you have a
+            check box when your task is completed you click it and when you
+            delete your create list simple click delete button and when you
+            update your current content so simple click on the update button.
+          </p>
+          <p class="thanksMessage">Thanks for rading this content 😊</p>
+          <div class="followMe">
+            <h3>Follow Me</h3>
+            <ul>
+              <li>
+                <a
+                  href="https://www.facebook.com/ShaykhMirzaban"
+                  target="_blank"
+                  ><i class="fa-brands fa-facebook"></i> Facebook</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/shaykhmirzaban" target="_blank"
+                  ><i class="fa-brands fa-github"></i> Github</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="portfolio">
+            <h3>Check my portfolio</h3>
+            <p>
+              <a
+                href="https://shaykh-mirzaban-portfolio.web.app/"
+                target="_blank"
+                >shaykh-mirzaban-portfolio.web.app</a
+              >
+            </p>
+          </div>
+          <p class="copyrightMessage">© Copyright 2022 Shaykh Mirzaban</p>
+        </div>
+        <!-- table insert item -->
+        <div class="tableContainer">
+          <table class="table"></table>
+        </div>
+        <!-- add items icon -->
+        <div class="addIcon">
+          <i class="fa-solid fa-plus"></i>
+        </div>
+      </div>
     </div>
     <!-- <input type="text" autofocus> -->
     <div class="sideBar">
-        <div class="hamburger">
-            <i class="fa-solid fa-angle-left"></i>
-        </div>
-        <div class="userImage">
+      <div class="hamburger">
+        <i class="fa-solid fa-angle-left"></i>
+      </div>
+      <div class="userImage"></div>
+      <div class="userName">
+        <h1>Shaykh Mirzaban</h1>
+      </div>
+      <ul class="list">
+        <li class="tasks"><i class="fa-solid fa-bars-progress"></i> Tasks</li>
+        <li class="about"><i class="fa-solid fa-eject"></i> About</li>
+      </ul>
 
-        </div>
-        <div class="userName">
-            <h1>Shaykh Mirzaban</h1>
-        </div>
-        <ul class="list">
-            <li class="tasks"><i class="fa-solid fa-bars-progress"></i> Tasks</li>
-            <li class="about"><i class="fa-solid fa-eject"></i> About</li>
-        </ul>
-
-
-
-        <div class="themes">
-            <button class="dark">Dark</button>
-            <button class="light">Light</button>
-        </div>
+      <div class="themes">
+        <button class="dark">Dark</button>
+        <button class="light">Light</button>
+      </div>
     </div>
 
     <!-- JavaScript external file link -->
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
