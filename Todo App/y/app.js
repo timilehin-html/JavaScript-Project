@@ -26,6 +26,12 @@ let elements = {
   followMe: ".followMe h3",
   portfolio: ".portfolio h3",
   copyrightMessage: ".copyrightMessage",
+  hour: ".hour",
+  minut: ".minut",
+  second: ".second",
+  pmAndAm: ".pmAndAm",
+  period: ".period",
+  emoji: ".emoji"
 };
 // flag
 let flag = false;
@@ -55,9 +61,15 @@ let hamburgerItem,
   thanksMessage,
   followMe,
   portfolio,
-  copyrightMessage;
+  copyrightMessage,
+  hours,
+  minut,
+  second,
+  pmAndAm,
+  period,
+  emoji;
 // global variable
-let inputFeild, checkBox;
+let inputFeild, checkBox, update;
 let arr = [];
 // audio add for add button
 const audio = new Audio();
@@ -89,6 +101,12 @@ audio.src = "./sound effect/mixkit-retro-game-notification-212.wav";
   followMe = document.querySelector(elements.followMe);
   portfolio = document.querySelector(elements.portfolio);
   copyrightMessage = document.querySelector(elements.copyrightMessage);
+  hours = document.querySelector(elements.hour);
+  minut = document.querySelector(elements.minut);
+  second = document.querySelector(elements.second);
+  pmAndAm = document.querySelector(elements.pmAndAm);
+  period = document.querySelector(elements.period);
+  emoji = document.querySelector(elements.emoji);
 }
 // all event listener
 hamburgerItem.addEventListener("click", displaySideNavBar);
@@ -113,7 +131,7 @@ function hiddenSideBar() {
 }
 // create DOM
 function createToDo() {
-  let table, tr, td, deleteButton, update;
+  let table, tr, td, deleteButton;
 
   table = document.querySelector(elements.table);
 
@@ -134,7 +152,6 @@ function createToDo() {
   deleteButton.append("Delete");
   update.append("Update");
   deleteButton.setAttribute("onclick", "deleteItem(this)");
-  update.setAttribute("onclick", "updateButtonAction(this)");
   checkBox.setAttribute("type", "checkbox");
   inputFeild.setAttribute("type", "text");
   inputFeild.setAttribute("placeholder", "Text");
@@ -163,6 +180,8 @@ function createToDo() {
   inputFeild.focus();
 
   audio.play();
+  update.style.opacity = "0.5";
+
 }
 
 // when any key press from keyboard anywhere in all window this function is run
@@ -170,12 +189,13 @@ window.addEventListener("keypress", (e) => {
   if (e.which === 13 && e.keyCode === 13) {
     enterKeyPressWhenSomeActionDone();
     UpdateCheckInputFeild();
+    update.setAttribute("onclick", "updateButtonAction(this)");
   }
 });
 
 // current input field change into text and remove background color
 function enterKeyPressWhenSomeActionDone() {
-  inputFeild.setAttribute("readOnly", true);
+  inputFeild.setAttribute("readonly", true);
   inputFeild.style.backgroundColor = "transparent";
 }
 
@@ -200,14 +220,23 @@ function updateButtonAction(e) {
   secondTD.style.backgroundColor = "#eee";
   // global flag
   flagforButton = true;
+
+  for(let i = 0; i < arr.length; i++) {
+    if(!arr[i].children[0].children[1].readOnly === true){
+      arr[i].children[0].children[1].focus();
+    }
+  }
+
 }
 // check box condition function
 function checkBoxCondition() {
-  let getTd, checkCheckBox;
+  let getTd, checkCheckBox, updateBtn;
 
   for (let i = 0; i < arr.length; i++) {
+
     getTd = arr[i].children[0].children[1];
     checkCheckBox = arr[i].children[0].children[0];
+    updateBtn = arr[i].children[0].children[3];
 
     if (checkCheckBox.checked) {
       if (flag === false) {
@@ -217,16 +246,19 @@ function checkBoxCondition() {
         getTd.style.textDecoration = "line-through";
         getTd.style.color = "#8f8f8f";
       }
+      updateBtn.removeAttribute("onclick");
+      updateBtn.style.opacity = "0.5";
     } else {
       if (flag === false) {
         getTd.style.textDecoration = "none";
         getTd.style.color = "#333";
-        // getTd.style.backgroundColor = "#eee";
       } else {
         getTd.style.textDecoration = "none";
         // getTd.style.backgroundColor = "#262a40";
         getTd.style.color = "#ccc";
       }
+      updateBtn.setAttribute("onclick", "updateButtonAction(this)");
+      updateBtn.style.opacity = "1";
     }
   }
   if (arr.length >= 0) {
@@ -281,7 +313,7 @@ function dark() {
   list.style.color = "#fff";
   progress.style.color = "#eeeeeeb0";
   eject.style.color = "#eeeeeeb0";
-  lightTheme.style.color = "#fff";
+  lightTheme.style.color = "#fff"; 
   column2.style.backgroundColor = "#161929";
   instruction.style.color = "#fff";
   longText.style.color = "#ccc";
@@ -289,7 +321,7 @@ function dark() {
   followMe.style.color = "#fff";
   portfolio.style.color = "#fff";
   copyrightMessage.style.color = "#ccc";
-  asd();
+  checkBoxCondition();
 }
 // light theme function
 function light() {
@@ -308,5 +340,57 @@ function light() {
   followMe.style.color = "#333";
   portfolio.style.color = "#333";
   copyrightMessage.style.color = "#333";
-  asd();
+  checkBoxCondition();
 }
+// timing section
+window.addEventListener("load", ()=> {
+  setInterval(()=> {
+  let date = new Date();
+  let hours1 = date.getHours();
+  let minut1 = date.getMinutes();
+  let second1 = date.getSeconds();
+
+  let amAndpm = hours1 > 12? "PM" : "AM"; 
+  hours1 = hours1 > 12? hours1 - 12 : hours1;
+
+  if(hours1 == 0) {
+    hours1 = 1;
+  }
+  if(hours1 < 10) {
+    hours1 = `0${hours1}`;
+  }
+  if(minut1 < 10) {
+    minut1 = `0${minut1}`;
+  }
+  if(second1 < 10) {
+    second1 = `0${second1}`;
+  }
+
+  // console.log(hours, minut, second , amAndpm);
+  hours.innerHTML = `${hours1}:`;
+  minut.innerHTML = `${minut1}:`;
+  second.innerHTML = `${second1}`;
+  pmAndAm.innerHTML = amAndpm;
+  }, 1000);
+});
+
+// good 
+window.addEventListener("load", ()=> {
+  let date = new Date();
+  date.setHours(20);
+  let hours = date.getHours();
+
+  if(hours >= 5 && hours < 12){
+    // console.log("Good Morning");
+    period.innerHTML = "Good Morning";
+    emoji.innerHTML = "🥱";
+  } else if(hours >= 12 && hours <= 17){
+    // console.log("Good Afternoon");
+    period.innerHTML = "Good Afternoon";
+    emoji.innerHTML = "😎";
+  } else{
+    // console.log("Good Evening");
+    period.innerHTML = "Good Evening";
+    emoji.innerHTML = "😀";
+  }
+});

@@ -337,6 +337,40 @@ input[type="checkbox"] {
     color: #fff;
 } */
 
+.good {
+  position: absolute;
+  right: 0.7em;
+  top: 0.7em;
+}
+.good p {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #fff;
+}
+.good .emoji {
+  padding: 0 0.5em;
+}
+
+.time {
+  position: absolute;
+  right: 2em;
+  bottom: 0.7em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+}
+.hour,
+.minut,
+.second,
+.pmAndAm {
+  font-size: 1.3em;
+  color: #fff;
+  padding: 0 0.1em;
+  font-weight: bold;
+}
+
 @media screen and (max-width: 600px) {
   .col1 .hamburgerIcon {
     transform: scale(1.2);
@@ -365,4 +399,32 @@ input[type="checkbox"] {
   .text .copyrightMessage {
     font-size: 1.1em;
   }
+  .time {
+    justify-content: center;
+    right: 0;
+  }
+  .good {
+    top: 1em;
+  }
+  .good p {
+    font-size: 1em;
+  }
+  .hour,
+  .minut,
+  .second,
+  .pmAndAm {
+    font-size: 1em;
+  }
 }
+
+/* time */
+
+/* position: absolute;
+    /* left: 11.5em; */
+/* bottom: 0.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%; */
