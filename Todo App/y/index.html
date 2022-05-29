@@ -48,8 +48,8 @@
       <div class="col1">
         <div class="heading">
           <h1>About us</h1>
-    <!--change it text-->
-    </div>
+          <!--change it text-->
+        </div>
         <div class="hamburgerIcon">
           <i class="fa-solid fa-bars"></i>
         </div>
@@ -112,12 +112,12 @@
           </div>
           <p class="copyrightMessage">© Copyright 2022 Shaykh Mirzaban</p>
         </div>
-    <!-- table insert item -->
-    <div class="tableContainer">
+        <!-- table insert item -->
+        <div class="tableContainer">
           <table class="table"></table>
         </div>
-    <!-- add items icon -->
-    <div class="addIcon" title="press tab to generate list">
+        <!-- add items icon -->
+        <div class="addIcon" title="press tab to generate list">
           <i class="fa-solid fa-plus"></i>
         </div>
       </div>
@@ -135,39 +135,50 @@
         <li class="tasks"><i class="fa-solid fa-bars-progress"></i> Tasks</li>
         <li class="about"><i class="fa-solid fa-eject"></i> About</li>
       </ul>
-    
+
       <div class="themes">
         <button class="dark">Dark</button>
         <button class="light">Light</button>
       </div>
     </div>
-    
 
     <!-- JavaScript external file link -->
     <script src="app.js"></script>
-
-
+    <!-- ****************************** -->
     <script type="module">
       // Import the functions you need from the SDKs you need
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
-      import { getDatabase, set, ref, update, get } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-database.js";
-      import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js";
+      import {
+        getDatabase,
+        set,
+        ref,
+        update,
+        get,
+      } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-database.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js";
+
       // TODO: Add SDKs for Firebase products that you want to use
       // https://firebase.google.com/docs/web/setup#available-libraries
-    
+
       // Your web app's Firebase configuration
       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
       const firebaseConfig = {
         apiKey: "AIzaSyAjJ5-4G2p2I1FZqEkbgEpo6eVLKL4RWcM",
         authDomain: "database-practice-mode.firebaseapp.com",
-        databaseURL: "https://database-practice-mode-default-rtdb.firebaseio.com",
+        databaseURL:
+          "https://database-practice-mode-default-rtdb.firebaseio.com",
         projectId: "database-practice-mode",
         storageBucket: "database-practice-mode.appspot.com",
         messagingSenderId: "986373616402",
         appId: "1:986373616402:web:386a9cc8fecf2cf0cbb9cb",
-        measurementId: "G-YWDN1WQZB7"
+        measurementId: "G-YWDN1WQZB7",
       };
-    
+
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       // Get a reference to the database service
@@ -175,164 +186,159 @@
       // Initialize Firebase Authentication and get a reference to the service
       const auth = getAuth(app);
 
-      function userNameSet (userId) {
-
-        let userName = document.querySelector(".userName h1");
-        const dbRef = ref(database);
-        get(child(dbRef, `User/${userId}`)).then((snapshot) => {
-          if (snapshot.exists()) {
-            userName.innerHTML = snapshot.val().userName;
-            console.log(snapshot.val());
-          } else {
-            console.log("No data available");
-          }
-          
-        }).catch((error) => {
-          console.error(error.message);
-        });
-      }
-
       var sign1 = true;
       var log1 = true;
 
       var signUp = document.querySelector(".signUpButton");
       var logIn = document.querySelector(".LoginButton");
+      // error div change scale in 1
       let error12 = document.querySelector(".error");
+      // error content
       let error1 = document.querySelector(".error1");
       // sign up
 
-      if(log1 === true){
-        logIn.addEventListener("click", ()=> {
-        let logAndSign = document.querySelector(".logAndSign");
-        let col = document.querySelector(".col-1");
-        let name = document.querySelector(".name");
-        let LoginButton = document.querySelector(".LoginButton");
-        let signUpButton = document.querySelector(".signUpButton");
+      function main1() {
+        logIn.addEventListener("click", () => {
+          if (log1 === true) {
+            let logAndSign = document.querySelector(".logAndSign");
+            let col = document.querySelector(".col-1");
+            let name = document.querySelector(".name");
+            let LoginButton = document.querySelector(".LoginButton");
+            let signUpButton = document.querySelector(".signUpButton");
 
-        name.style.display = "none";
+            name.style.display = "none";
 
-        LoginButton.style.backgroundColor = "#2f2e40";
-        LoginButton.style.boxShadow = "none";
-        LoginButton.style.borderColor = "#2f2d40";
+            LoginButton.style.backgroundColor = "#2f2e40";
+            LoginButton.style.boxShadow = "none";
+            LoginButton.style.borderColor = "#2f2d40";
 
-        signUpButton.style.backgroundColor = "transparent";
-        signUpButton.style.boxShadow = "inset 0 0 12px 0 #554ce2";
-        signUpButton.style.borderColor = "#4c44dc";
+            signUpButton.style.backgroundColor = "transparent";
+            signUpButton.style.boxShadow = "inset 0 0 12px 0 #554ce2";
+            signUpButton.style.borderColor = "#4c44dc";
 
-        logAndSign.innerHTML = "Login";
-        col.style.backgroundImage = "url(./images/login1.png)";
+            logAndSign.innerHTML = "Login";
+            col.style.backgroundImage = "url(./images/login1.png)";
+            // console.log("main bhi update ho rahan ho");
 
-      });
-      log1 = false;
-      sign1 = false;
-      asd();
-      asd1();
-      }
-
-      function asd () {
-        if(log1 === false){
-        logIn.addEventListener("click", ()=> {
-        let email = document.querySelector(".email").value;
-        let password = document.querySelector(".password").value;
-
-        signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          // Signed in 
-          const user = userCredential.user;
-          const dt = new Date();
-          update(ref(database, "User/" + user.uid),{
-            logIn_User: dt,
-          })
-
-          let pageDisapper = document.querySelector(".container");
-          pageDisapper.style.transform = "scale(0)";
-          // ...
-          error12.style.transform = "scale(1)";
-          error1.innerHTML = "User loged In";
-          userNameSet(user.uid);
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-
-          error12.style.transform = "scale(1)";
-          error1.innerHTML = errorCode;
-          // alert(errorCode);
-          // alert(errorMessage);
-
+            // console.log(log1 + " main app ka dost");
+            log1 = false;
+            sign1 = false;
+            asd();
+            asd1();
+            // console.log("mujhy update kia gaya hy");
+          }
         });
-        log1 = false;
-        })
+      }
+      main1();
+
+      function asd() {
+        if (log1 === false) {
+          // console.log("main run ho rahan ho login");
+          logIn.addEventListener("click", () => {
+            // console.log("mujh py click kia gaya hy");
+            let email = document.querySelector(".email").value;
+            let password = document.querySelector(".password").value;
+
+            signInWithEmailAndPassword(auth, email, password)
+              .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                const dt = new Date();
+                update(ref(database, "User/" + user.uid), {
+                  logIn_User: dt,
+                });
+
+                let pageDisapper = document.querySelector(".container");
+                pageDisapper.style.transform = "scale(0)";
+                // ...
+                error12.style.transform = "scale(1)";
+                error1.innerHTML = "User loged In";
+                userNameSet(user.uid);
+              })
+              .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+
+                error12.style.transform = "scale(1)";
+                error1.innerHTML = errorCode;
+              });
+          });
         }
       }
-        
 
-      if(sign1 === true){
-        signUp.addEventListener("click", ()=> {
-        let email = document.querySelector(".email").value;
-        let name = document.querySelector(".name").value;
-        let password = document.querySelector(".password").value;
+      function asd1() {
+        signUp.addEventListener("click", () => {
+          if (sign1 === false) {
+            let logAndSign = document.querySelector(".logAndSign");
+            let col = document.querySelector(".col-1");
+            let name = document.querySelector(".name");
+            let LoginButton = document.querySelector(".LoginButton");
+            let signUpButton = document.querySelector(".signUpButton");
 
-        createUserWithEmailAndPassword(auth, email, password)
+            name.style.display = "block";
 
-        .then((userCredential) => {
-          // Signed in 
-          const user = userCredential.user;
+            LoginButton.style.backgroundColor = "transparent";
+            LoginButton.style.boxShadow = "inset 0 0 12px 0 #554ce2";
+            LoginButton.style.borderColor = "#4c44dc";
 
-          set(ref(database, "User/" + user.uid), {
-            userName: name,
-            userEmail: email,
-            userPassword: password
-          })
+            signUpButton.style.backgroundColor = "#2f2e40";
+            signUpButton.style.boxShadow = "none";
+            signUpButton.style.borderColor = "#2f2d40";
 
-          // ...
-          let pageDisapper = document.querySelector(".container");
-          pageDisapper.style.transform = "scale(0)";
+            logAndSign.innerHTML = "Sign Up";
+            col.style.backgroundImage = "url(./images/signUp1.jpg)";
 
-          error12.style.transform = "scale(1)";
-          error1.innerHTML = "Sign Up";
-          userNameSet(user.uid);
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          // ..
-          error12.style.transform = "scale(1)";
-          error1.innerHTML = errorCode;
-          // alert(errorMessage);
-          // alert(errorCode);
-        });
-
+            // console.log(log1 + " main app ka dost 1");
+            log1 = true;
+            sign1 = true;
+            main1();
+            main2();
+            // console.log("mujhy update kia gaya hy 1");
+          }
         });
       }
 
-      function asd1 () {
-        if(sign1 === false) {
-        signUp.addEventListener("click", ()=> {
-        let logAndSign = document.querySelector(".logAndSign");
-        let col = document.querySelector(".col-1");
-        let name = document.querySelector(".name");
-        let LoginButton = document.querySelector(".LoginButton");
-        let signUpButton = document.querySelector(".signUpButton");
+      function main2() {
+        // console.log("main main2 hon");
+        signUp.addEventListener("click", () => {
+          if (sign1 === true) {
+            // console.log("condition check kia ga raha hy");
 
-        name.style.display = "block";
+            let email = document.querySelector(".email").value;
+            let name = document.querySelector(".name").value;
+            let password = document.querySelector(".password").value;
 
-        LoginButton.style.backgroundColor = "transparent";
-        LoginButton.style.boxShadow = "inset 0 0 12px 0 #554ce2";
-        LoginButton.style.borderColor = "#4c44dc";
+            createUserWithEmailAndPassword(auth, email, password)
+              .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
 
-        signUpButton.style.backgroundColor = "#2f2e40";
-        signUpButton.style.boxShadow = "none";
-        signUpButton.style.borderColor = "#2f2d40";
+                set(ref(database, "User/" + user.uid), {
+                  userName: name,
+                  userEmail: email,
+                  userPassword: password,
+                });
 
-        logAndSign.innerHTML = "Sign Up";
-        col.style.backgroundImage = "url(./images/signUp1.jpg)";
-      });
-    
-      sign1 = true;
+                // ...
+                let pageDisapper = document.querySelector(".container");
+                pageDisapper.style.transform = "scale(0)";
+
+                error12.style.transform = "scale(1)";
+                error1.innerHTML = "Sign Up";
+                userNameSet(user.uid);
+              })
+              .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // ..
+                error12.style.transform = "scale(1)";
+                error1.innerHTML = errorCode;
+              });
+          }
+        });
       }
-      }
-
+      main2();
     </script>
+    <!-- ****************************** -->
   </body>
 </html>

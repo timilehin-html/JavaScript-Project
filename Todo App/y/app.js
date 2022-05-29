@@ -31,7 +31,7 @@ let elements = {
   second: ".second",
   pmAndAm: ".pmAndAm",
   period: ".period",
-  emoji: ".emoji"
+  emoji: ".emoji",
 };
 // flag
 let flag = false;
@@ -185,7 +185,6 @@ function createToDo() {
 
   audio.play();
   update.style.opacity = "0.5";
-
 }
 
 // when any key press from keyboard anywhere in all window this function is run
@@ -227,12 +226,11 @@ function updateButtonAction(e) {
   // global flag
   flagforButton = true;
 
-  for(let i = 0; i < arr.length; i++) {
-    if(!arr[i].children[0].children[1].readOnly === true){
+  for (let i = 0; i < arr.length; i++) {
+    if (!arr[i].children[0].children[1].readOnly === true) {
       arr[i].children[0].children[1].focus();
     }
   }
-
 }
 // check box condition function
 function checkBoxCondition() {
@@ -240,7 +238,6 @@ function checkBoxCondition() {
   let getTd, checkCheckBox, updateBtn;
 
   for (let i = 0; i < arr.length; i++) {
-
     getTd = arr[i].children[0].children[1];
     checkCheckBox = arr[i].children[0].children[0];
     updateBtn = arr[i].children[0].children[3];
@@ -324,7 +321,7 @@ function dark() {
   list.style.color = "#fff";
   progress.style.color = "#eeeeeeb0";
   eject.style.color = "#eeeeeeb0";
-  lightTheme.style.color = "#fff"; 
+  lightTheme.style.color = "#fff";
   column2.style.backgroundColor = "#161929";
   instruction.style.color = "#fff";
   longText.style.color = "#ccc";
@@ -355,52 +352,52 @@ function light() {
   checkBoxCondition();
 }
 // timing section
-window.addEventListener("load", ()=> {
-  setInterval(()=> {
-  let date = new Date();
-  let hours1 = date.getHours();
-  let minut1 = date.getMinutes();
-  let second1 = date.getSeconds();
+window.addEventListener("load", () => {
+  setInterval(() => {
+    let date = new Date();
+    let hours1 = date.getHours();
+    let minut1 = date.getMinutes();
+    let second1 = date.getSeconds();
 
-  let amAndpm = hours1 > 12? "PM" : "AM"; 
-  hours1 = hours1 > 12? hours1 - 12 : hours1;
+    let amAndpm = hours1 > 12 ? "PM" : "AM";
+    hours1 = hours1 > 12 ? hours1 - 12 : hours1;
 
-  if(hours1 == 0) {
-    hours1 = 1;
-  }
-  if(hours1 < 10) {
-    hours1 = `0${hours1}`;
-  }
-  if(minut1 < 10) {
-    minut1 = `0${minut1}`;
-  }
-  if(second1 < 10) {
-    second1 = `0${second1}`;
-  }
+    if (hours1 == 0) {
+      hours1 = 1;
+    }
+    if (hours1 < 10) {
+      hours1 = `0${hours1}`;
+    }
+    if (minut1 < 10) {
+      minut1 = `0${minut1}`;
+    }
+    if (second1 < 10) {
+      second1 = `0${second1}`;
+    }
 
-  // console.log(hours, minut, second , amAndpm);
-  hours.innerHTML = `${hours1}:`;
-  minut.innerHTML = `${minut1}:`;
-  second.innerHTML = `${second1}`;
-  pmAndAm.innerHTML = amAndpm;
+    // console.log(hours, minut, second , amAndpm);
+    hours.innerHTML = `${hours1}:`;
+    minut.innerHTML = `${minut1}:`;
+    second.innerHTML = `${second1}`;
+    pmAndAm.innerHTML = amAndpm;
   }, 1000);
 });
 
-// good 
-window.addEventListener("load", ()=> {
+// good
+window.addEventListener("load", () => {
   let date = new Date();
   date.setHours(20);
   let hours = date.getHours();
 
-  if(hours >= 5 && hours < 12){
+  if (hours >= 5 && hours < 12) {
     // console.log("Good Morning");
     period.innerHTML = "Good Morning";
     emoji.innerHTML = "🥱";
-  } else if(hours >= 12 && hours <= 17){
+  } else if (hours >= 12 && hours <= 17) {
     // console.log("Good Afternoon");
     period.innerHTML = "Good Afternoon";
     emoji.innerHTML = "😎";
-  } else{
+  } else {
     // console.log("Good Evening");
     period.innerHTML = "Good Evening";
     emoji.innerHTML = "😀";
