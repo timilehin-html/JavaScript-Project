@@ -70,10 +70,11 @@ let hamburgerItem,
   emoji;
 // global variable
 let inputFeild, checkBox, update;
+
 let arr = [];
 // audio add for add button
 const audio = new Audio();
-audio.src = "./sound effect/mixkit-retro-game-notification-212.wav";
+audio.src = "./sound effect/41957518_pen-click-01.wav";
 // element get from html
 {
   hamburgerItem = document.querySelector(elements.hamburgerItem);
@@ -121,13 +122,16 @@ rightHamburger.addEventListener("click", createToDo);
 function displaySideNavBar() {
   if ((sideBar.style.transform = "translateX(-400px)")) {
     sideBar.style.transform = "translateX(0px)";
+    audio.play();
   } else {
     sideBar.style.transform = "translateX(-400px)";
+    audio.play();
   }
 }
 // close listener
 function hiddenSideBar() {
   sideBar.style.transform = "translateX(-400px)";
+  audio.play();
 }
 // create DOM
 function createToDo() {
@@ -201,6 +205,7 @@ function enterKeyPressWhenSomeActionDone() {
 
 // when click update button check some condition in input field
 function UpdateCheckInputFeild() {
+  audio.play();
   if (flagforButton === true) {
     for (let i = 0; i < arr.length; i++) {
       if ((arr[i].children[0].children[1].style.backgroundColor = "#eee")) {
@@ -213,6 +218,7 @@ function UpdateCheckInputFeild() {
 }
 // update button
 function updateButtonAction(e) {
+  audio.play();
   let secondTD;
 
   secondTD = e.parentNode.children[1];
@@ -230,6 +236,7 @@ function updateButtonAction(e) {
 }
 // check box condition function
 function checkBoxCondition() {
+  audio.play();
   let getTd, checkCheckBox, updateBtn;
 
   for (let i = 0; i < arr.length; i++) {
@@ -269,6 +276,7 @@ function checkBoxCondition() {
 window.addEventListener("change", checkBoxCondition);
 // delte items button function
 function deleteItem(e) {
+  audio.play();
   let lastElement;
 
   e.parentNode.parentNode.style.transform = "scale(0)";
@@ -283,6 +291,7 @@ function deleteItem(e) {
 }
 // about page content
 function changed() {
+  audio.play();
   text1.style.display = "none";
   body.style.backgroundColor = "#5352ed";
   column1.style.backgroundImage = "url('./images/Sample 10.png')";
@@ -295,6 +304,7 @@ function changed() {
 }
 // todo page content
 function changed1() {
+  audio.play();
   text1.style.display = "block";
   body.style.backgroundColor = "#8ec7ff";
   column1.style.backgroundImage = "url('./images/img2.png')";
@@ -306,6 +316,7 @@ function changed1() {
 }
 // dark theme function
 function dark() {
+  audio.play();
   flag = true;
   sideBar.style.backgroundColor = "rgb(36 46 86)";
   leftAngle.style.borderColor = "#13269b";
@@ -325,6 +336,7 @@ function dark() {
 }
 // light theme function
 function light() {
+  audio.play();
   flag = false;
   sideBar.style.backgroundColor = "rgb(255 255 255)";
   leftAngle.style.borderColor = "#ccc";
