@@ -15,7 +15,7 @@ let name = localStorage.getItem("userName");
 let email = localStorage.getItem("userEmail");
 
 if (name.length > 0) {
-  alert(`Hello ${name} you are login`);
+  // alert(`Hello ${name} you are login`);
   loginPage.style.transform = "scale(0)";
   gameRulePage.style.transform = "scale(1)";
 }

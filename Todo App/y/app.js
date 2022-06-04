@@ -186,22 +186,11 @@ function createToDo() {
   audio.play();
   update.style.opacity = "0.5";
 }
-
-// when any key press from keyboard anywhere in all window this function is run
-window.addEventListener("keypress", (e) => {
-  if (e.which === 13 && e.keyCode === 13) {
-    enterKeyPressWhenSomeActionDone();
-    UpdateCheckInputFeild();
-    update.setAttribute("onclick", "updateButtonAction(this)");
-  }
-});
-
 // current input field change into text and remove background color
 function enterKeyPressWhenSomeActionDone() {
   inputFeild.setAttribute("readonly", true);
   inputFeild.style.backgroundColor = "transparent";
 }
-
 // when click update button check some condition in input field
 function UpdateCheckInputFeild() {
   audio.play();
@@ -269,8 +258,6 @@ function checkBoxCondition() {
     enterKeyPressWhenSomeActionDone();
   }
 }
-
-window.addEventListener("change", checkBoxCondition);
 // delte items button function
 function deleteItem(e) {
   audio.play();
@@ -351,6 +338,16 @@ function light() {
   copyrightMessage.style.color = "#333";
   checkBoxCondition();
 }
+
+// when any key press from keyboard anywhere in all window this function is run
+window.addEventListener("keypress", (e) => {
+  if (e.which === 13 && e.keyCode === 13) {
+    enterKeyPressWhenSomeActionDone();
+    UpdateCheckInputFeild();
+    update.setAttribute("onclick", "updateButtonAction(this)");
+  }
+});
+window.addEventListener("change", checkBoxCondition);
 // timing section
 window.addEventListener("load", () => {
   setInterval(() => {
@@ -382,7 +379,6 @@ window.addEventListener("load", () => {
     pmAndAm.innerHTML = amAndpm;
   }, 1000);
 });
-
 // good
 window.addEventListener("load", () => {
   let date = new Date();
